@@ -79,7 +79,7 @@ body{
 
 #home{
     margin-top: 4rem;
-    background: url(/Assets/home.png) no-repeat;
+    background: url(../Assets/home.png) no-repeat;
     background-position: center;
     background-size: cover;
 }
@@ -267,7 +267,7 @@ body{
     justify-content: center;
     gap: 2rem;
     padding: 2.3rem;
-    background: url(/Assets/469164.jpg) no-repeat;
+    background: url(../Assets/469164.jpg) no-repeat;
     background-position: center;
     background-size: cover;
 }
