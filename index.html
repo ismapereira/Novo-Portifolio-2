@@ -82,7 +82,64 @@
                 Com toda certeza a jornada ainda é longa e terei muitos projetos para publicar nessa página, que por si só já está incluída nos meus projetos e no meu portifólio.</p>
             </div>
 
+            <div class="cabecalho-about">
+                <h2>Meus pilares no desenvolvimento...</h2>
+                <hr>
+            </div>
+
+            <div class="pilares">
+                <div class="container-pilares">
+
+                    <input type="radio" name="slide" id="c1" checked>
+                    <label for="c1" class="card-pilares">
+                        <div class="row">
+                            <div class="pilar-icon">1</div>
+                            <div class="descricao-pilares">
+                                <h4>Design atraente</h4>
+                                <p>Desenvolvendo páginas atraentes e modernas</p>
+                            </div>
+                        </div>
+                    </label>
+
+                    <input type="radio" name="slide" id="c2">
+                    <label for="c2" class="card-pilares">
+                        <div class="row">
+                            <div class="pilar-icon">2</div>
+                            <div class="descricao-pilares">
+                                <h4>Intertividade</h4>
+                                <p>Adaptação de elementos dinâmicos e interativos</p>
+                            </div>
+                        </div>
+                    </label>
+
+                    <input type="radio" name="slide" id="c3">
+                    <label for="c3" class="card-pilares">
+                        <div class="row">
+                            <div class="pilar-icon">3</div>
+                            <div class="descricao-pilares">
+                                <h4>Experiência simplificada</h4>
+                                <p>Páginas de fácil navegação e fáceis de compreender</p>
+                            </div>
+                        </div>
+                    </label>
+
+                    <input type="radio" name="slide" id="c4">
+                    <label for="c4" class="card-pilares">
+                        <div class="row">
+                            <div class="pilar-icon">4</div>
+                            <div class="descricao-pilares">
+                                <h4>Páginas eficientes</h4>
+                                <p>Sites responsivos e objetivos</p>
+                            </div>
+                        </div>
+                    </label>
+
+                </div>
+            </div>
+
         </section>
+
+        <!-- Projetos -->
 
         <section class="conteudo-projetos" id="projetos">
 
@@ -113,6 +170,62 @@
                 </div>
             
             </div>
+
+        </section>
+
+        <!-- Contato -->
+
+        <section class="contato conteudo-main" id="contato">
+
+            <div class="cabecalho-about">
+                <h2>Fale comigo...</h2>
+                <hr>
+                <span>Preencha o formulário com suas informações, que entrarei em contato com você.</span>
+            </div>
+
+            <form action="https://api.staticforms.xyz/submit" method="post">
+
+                <div class="input-box">
+
+                    <div class="input-field">
+                        <input name="name" type="text" placeholder="Nome" required>
+                        <span class="focus"></span>
+                    </div>
+
+                    <div class="input-field">
+                        <input name="email" type="email" placeholder="Email" required>
+                        <span class="focus"></span>
+                    </div>
+
+                </div>
+
+                <div class="input-box">
+
+                    <div class="input-field">
+                        <input name="name" type="number" placeholder="Número de telefone" required>
+                        <span class="focus"></span>
+                    </div>
+
+                    <div class="input-field">
+                        <input name="name" type="text" placeholder="Assunto" required>
+                        <span class="focus"></span>
+                    </div>
+
+                </div>
+
+                <div class="textarea-field">
+                    <textarea name="message" id="" cols="30" rows="10" placeholder="Escreva sua mensagem" required></textarea>
+                    <span class="focus"></span>
+                </div>
+
+                <div class="btn-box btns">
+                    <button type="submit" class="btn">Enviar</button>
+                </div>
+
+                <input type="hidden" name="accessKey" value="75d49f31-0362-45e0-9883-141bbbb9647b">
+                <input type="hidden" name="redirectTo" value="http://127.0.0.1:5500/agradecimento.html">
+
+            </form>
 
         </section>
 

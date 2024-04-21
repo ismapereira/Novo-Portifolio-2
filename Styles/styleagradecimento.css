@@ -1,0 +1,66 @@
+@import url(/Styles/style.css);
+
+body{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0 auto;
+    gap: 1.5rem;
+}
+
+section{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1.5rem;
+    width: 500px;
+    height: 250px;
+    border-radius: 0.4rem;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
+}
+
+h1{
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    gap: 1rem;
+}
+
+p{
+    font-family: var(--fonte-montserrat);
+}
+
+a{
+    font-family: var(--fonte-montserrat);
+    font-weight: 500;
+    text-transform: uppercase;
+    border: 2px solid #6F9CEB;
+    padding: 1rem;
+    border-radius: 0.4rem;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
+    position: relative;
+    display: block;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+a::before{
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(45deg);
+    width: 110%;
+    height: 0;
+    background: var(--cor-destaque-clara);
+    z-index: -1;
+    transition: 1s ease;
+}
+
+a:hover::before{
+    height: 400%;
+}
+

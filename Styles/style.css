@@ -19,6 +19,17 @@
     font-family: var(--fonte-poppins);
 }
 
+::-webkit-scrollbar{
+    background: linear-gradient(var(--cor-escura), var(--cor-destaque-clara));
+    width: 1rem;
+    border-left: 1px solid linear-gradient(var(--cor-escura), var(--cor-destaque-clara));
+}
+
+::-webkit-scrollbar-thumb{
+    background: var(--cor-escura-2);
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
+}
+
 body{
     background: var(--cor-escura);
 }
@@ -53,8 +64,22 @@ body{
 }
 
 .links-nav > ul > li > a{
-    padding: 0.5rem;
+    padding: 0.2rem;
     font-weight: 500;
+    text-transform: uppercase;
+    position: relative;
+}
+
+.links-nav > ul > li > a::after{
+    background: none repeat scroll 0 0 transparent;
+    bottom: 0;
+    content: '';
+    height: 1px;
+    left: 50%;
+    position: absolute;
+    background: var(--cor-destaque-clara);
+    transition: width 0.3s ease 0s, left 0.3s ease 0s;
+    width: 0;
 }
 
 .conteudo-header > img{
@@ -63,11 +88,9 @@ body{
 
 /* ANIMAÇÕES DO HEADER */
 
-.links-nav > ul > li > a:hover{
-    transform: scale(1.1);
-    transition: 0.3s ease;
-    background: var(--cor-destaque-clara);
-    border-radius: 0.7rem;
+.links-nav > ul > li > a:hover::after{
+    width: 100%;
+    left: 0;
 }
 
 /* FIM DO HEADER */
@@ -132,10 +155,25 @@ body{
     justify-content: center;
     gap: 0.5rem;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    transition: 0.8s ease;
+    text-transform: uppercase;
 }
 
 .botao-2{
-    text-decoration: underline;
+    text-transform: uppercase;
+    position: relative;
+}
+
+.botao-2::after{
+    background: none repeat scroll 0 0 transparent;
+    bottom: -5px;
+    content: '';
+    height: 1px;
+    left: 50%;
+    position: absolute;
+    background: var(--cor-destaque-clara);
+    transition: width 0.3s ease 0s, left 0.3s ease 0s;
+    width: 0;
 }
 
 .social{
@@ -154,6 +192,10 @@ body{
 .social-icons{
     font-size: 2.3rem;
     padding: 0.7rem;
+}
+
+.social-icons > i{
+    transition: 2s ease;
 }
 
 .conteudo-direita{
@@ -180,22 +222,30 @@ body{
     gap: 1rem;
 }
 
-/* ANIMAÇÕES DO MAIN */
+.imagens-main > img{
+    transition: 3.5s ease;
+}
+
+/* ANIMAÇÕES DO HOME*/
 
 .botao:hover{
     transform: scale(1.1);
-    transition: 0.3s ease;
 }
 
 .social-icons > i:hover{
     transform: scale(1.05);
-    transition: 0.3s ease;
     color: var(--cor-destaque-clara);
+    transform: rotateY(360deg);
 }
 
 .imagens-main > img:hover{
+    transform: rotateY(360deg);
     opacity: 70%;
-    transition: 0.4s ease;
+}
+
+.botao-2:hover::after{
+    width: 100%;
+    left: 0;
 }
 
 /* about */
@@ -222,6 +272,7 @@ body{
     border-radius: 50%;
     border: 0.1rem solid var(--cor-destaque-clara);
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    transition: 1s ease;
 }
 
 .cabecalho-about{
@@ -251,11 +302,110 @@ body{
     font-family: var(--fonte-montserrat);
 }
 
+.pilares{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: -5rem;
+}
+
+.container-pilares{
+    height: 400px;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: start;
+}
+
+.card-pilares{
+    width: 80px;
+    border-radius: 0.75rem;
+    background-size: cover;
+    cursor: pointer;
+    overflow: hidden;
+    border-radius: 2rem;
+    margin: 0 10px;
+    display: flex;
+    align-items: flex-end;
+    transition: 0.6s cubic-bezier(0.28,-0.03,0,0.99);
+    box-shadow: 0 10px 30px -5px rgba(0, 0, 0, 0.8);
+}
+
+.card-pilares > .row{
+    color: white;
+    display: flex;
+    flex-wrap: nowrap;
+}
+
+.pilar-icon{
+    background: #223;
+    color: white;
+    border-radius: 50%;
+    width: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 15px;
+}
+
+.card-pilares > .row > .descricao-pilares{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    overflow: hidden;
+    height: 80px;
+    width: 520px;
+    opacity: 0;
+    transform: translateY(30px);
+    transition-delay: 0.3s;
+    transition: all 0.3s ease;
+}
+
+.descricao-pilares > p{
+    color: white;
+    padding-top: 5px;
+}
+
+.descricao-pilares > h4{
+    text-transform: uppercase;
+}
+
+.container-pilares > input{
+    display: none;
+}
+
+.container-pilares > input:checked + label{
+    width: 600px;
+}
+
+.container-pilares > input:checked + label .descricao-pilares{
+    opacity: 1 !important;
+    transform: translateY(0) !important;
+}
+
+.card-pilares[for="c1"]{
+    background-image: url(/Assets/c1.jpg);
+}
+
+.card-pilares[for="c2"]{
+    background-image: url(/Assets/c2.png);
+}
+
+.card-pilares[for="c3"]{
+    background-image: url(/Assets/c3.png);
+}
+
+.card-pilares[for="c4"]{
+    background-image: url(/Assets/c4.jpg);
+}
+
+
+
 /* ANIMAÇÕES DO ABOUT */
 
 .img-about > img:hover{
     opacity: 75%;
-    transition: 0.4s ease;
 }
 
 /* projetos */
@@ -284,9 +434,9 @@ body{
     width: 75vw;
     max-width: 650px;
     padding: 50px 30px 50px 20px;
-    background: var(--cor-destaque-clara);
-    border-radius: 24px;
+    border-radius: 0.6rem;
     box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+    backdrop-filter: blur(3px);
 }
 
 .card > img{
@@ -308,24 +458,48 @@ body{
 }
 
 .card > div > h3{
-    color: var(--cor-escura);
+    color: white;
+    text-transform: uppercase;
 }
 
 .card > div > p{
-    color: var(--cor-escura-2);
+    color: white;
     font-family: var(--fonte-montserrat);
     font-weight: 500;
 }
 
 .card > div > a{
-    border: 0;
-    background: var(--cor-escura);
-    font-family: inherit;
+    border: 1px solid var(--cor-destaque-clara);
+    font-family: var(--fonte-montserrat);
     padding: 16px 26px;
     font-size: 16px;
-    border-radius: 15px;
+    border-radius: 8px;
     box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+    display: block;
+    text-transform: uppercase;
+    font-weight: bold;
+    position: relative;
+    overflow: hidden;
 }
+
+.card > div > a::before{
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(45deg);
+    width: 110%;
+    height: 0;
+    background: var(--cor-destaque-clara);
+    z-index: -1;
+    transition: 1s ease;
+}
+
+
+.card > div > a:hover::before{
+    height: 400%;
+}
+
 
 @media(width <= 740px){
 
@@ -350,6 +524,104 @@ body{
         align-items: center;
     }
 
+}
+
+/* contato */
+
+.contato{
+  min-height: auto;
+  padding-bottom: 7rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.contato > div > hr{
+    width: 50%;
+}
+
+.contato > form{
+    max-width: 70rem;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.input-box{
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.input-field{
+    position: relative;
+    width: 49%;
+    margin: 0.8rem 0;
+}
+
+.input-field > input,
+.textarea-field > textarea{
+    width: 100%;
+    height: 100%;
+    padding: 1rem;
+    color: var(--cor-destaque-clara);
+    background: transparent;
+    border-radius: 0.3rem;
+    border: 0.15rem solid var(--cor-destaque-clara);
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    font-family: var(--fonte-montserrat);
+}
+
+.input-field > input::placeholder,
+.textarea-field > textarea::placeholder{
+    color: white;
+    font-family: var(--fonte-poppins);
+}
+
+.textarea-field{
+    position: relative;
+    margin: 0.8rem 0 2.7rem;
+    display: flex;
+}
+
+.textarea-field > textarea{
+    resize: none;
+}
+
+.btn-box > button{
+    cursor: pointer;
+    padding: 1rem 3rem;
+    color: white;
+    background: transparent;
+    border-radius: 0.2rem;
+    outline: none;
+    border: 2px solid var(--cor-destaque-clara);
+    font-size: 1rem;
+    font-weight: bold;
+    position: relative;
+    display: block;
+    overflow: hidden;
+    text-transform: uppercase;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    font-family: var(--fonte-montserrat);
+}
+
+.btn-box > button::before{
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(45deg);
+    width: 110%;
+    height: 0;
+    background: var(--cor-destaque-clara);
+    z-index: -1;
+    transition: 1s ease;
+}
+
+/* ANIMAÇÕES DO CONTATO */
+
+.btn-box > button:hover::before{
+    height: 400%;
 }
 
 /* FIM DO MAIN */
